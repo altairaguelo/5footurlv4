@@ -34,11 +34,11 @@ class Form extends React.Component {
         }
 
         var generatedKey = nanoid(5);
-        var generatedURL = "5footurl.com/" + this.state.preferredAlias
+        var generatedURL = "fivefooturl.onrender.com/" + this.state.preferredAlias
 
         if (this.state.preferredAlias !== ''){
             generatedKey = this.state.preferredAlias
-            generatedURL = "5footurl.com/" + this.state.preferredAlias
+            generatedURL = "fivefooturl.onrender.com/" + this.state.preferredAlias
         }
 
         const db = getDatabase();
@@ -159,7 +159,7 @@ class Form extends React.Component {
                         <label htmlFor="basic-url">Your 5footURL</label>
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
-                                <span className="input-group-text">5footurl.com/</span>
+                                <span className="input-group-text">fivefooturl.onrender.com/</span>
 
                             </div>
                             <input
