@@ -3,6 +3,7 @@ import firebase_admin
 from firebase_admin import db
 import os
 from firebase_admin import credentials
+import json
 #empty
 cred_json = os.environ.get("FIREBASE_CREDENTIALS")
 cred_dict = json.loads(cred_json)
