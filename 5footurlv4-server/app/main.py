@@ -29,3 +29,7 @@ def fetch_from_firebase(generatedKey):
     else:
         longURL = data['longURL']
         return redirect(longURL)
+
+@app.route('/<path:path>')
+def catch_all(path):
+    return render_template('index.html')
