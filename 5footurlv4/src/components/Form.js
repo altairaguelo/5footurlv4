@@ -34,7 +34,7 @@ class Form extends React.Component {
         }
 
         var generatedKey = nanoid(5);
-        var generatedURL = "fivefooturl.onrender.com/" + this.state.preferredAlias
+        var generatedURL = "fivefooturl.onrender.com/" + generatedKey
 
         if (this.state.preferredAlias !== ''){
             generatedKey = this.state.preferredAlias
@@ -56,7 +56,7 @@ class Form extends React.Component {
         }).catch((e) => {
 
         })
-    }
+    };
 
     hasError = (key) => {
         return this.state.errors.indexOf(key) !== -1;
@@ -219,7 +219,7 @@ class Form extends React.Component {
                                         }
                                     >
                                         <button
-                                            onclick={() => this.copyToClipBoard()} data-toggle="tooltip"
+                                            onClick={() => this.copyToClipBoard()} data-toggle="tooltip"
                                             data-placement="top" title="Tooltip on top" className="btn btn-outline-secondary"
                                             type="button">
                                             Copy
@@ -232,7 +232,7 @@ class Form extends React.Component {
                     }
                 </form>
             </div>
-        )
+        );
     }
 }
 
