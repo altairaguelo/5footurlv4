@@ -113,10 +113,19 @@ class Form extends React.Component {
     }
     
     checkKeyExists = async () => {
+         const dbRef = ref(getDatabase());
+        try {
+            const snapshot = await get(child(dbRef, `/${this.state.preferredAlias}`));
+            return snapshot; // Return the snapshot itself
+        } catch (error) {
+            console.error("Error checking key existence:", error);
+            return null; // Return null in case of error
+        }
+        /*
         const dbRef = ref(getDatabase());
         return get(child(dbRef, `/${this.state.preferredAlias}`)).catch((error) => {
             return false;
-        });
+        });*/
     }
 
     copyToClipBoard = () => {
